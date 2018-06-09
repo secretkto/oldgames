@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Homepage from '@/pages/Homepage'
 import Minesweeper from '@/pages/Minesweeper'
+import Games from '@/pages/Games'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/minesweeper',
       name: 'Minesweeper',
       component: Minesweeper
+    },
+    {
+      path: '/games',
+      name: 'Games',
+      component: Games
     }
   ]
 })
