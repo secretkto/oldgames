@@ -1,8 +1,7 @@
 <template>
-  <router-link tag="div" to="/games" class="main-wrapper">
+  <div class="main-wrapper">
     <div class="logo-wrapper">
       <img src="../assets/2vertical.svg" class="logo">
-      <router-view/>
     </div>
     <div class="screen">
       <div class="perspective">
@@ -13,16 +12,24 @@
       </div>
     </div>
     <!--<canvas></canvas>-->
-  </router-link>
-
+  </div>
 </template>
 
 <script>
-
+import router from '../router/index'
 export default {
-  name: 'Homepage'
+  name: 'Homepage',
+  created: function () {
+    setTimeout(function () {
+      router.push({name: 'Games'})
+    }, 2500)
+  }
 }
-// document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', function () {
+  // setTimeout(function () {
+  //   router.push({name: 'Games'})
+  // }, 2500)
 //   class Particle {
 //     constructor (k, i, j) {
 //       this.i = i
@@ -184,20 +191,22 @@ export default {
 //     draw()
 //   }
 //   requestAnimationFrame(run)
-// })
+})
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .main-wrapper{
-    border: 3px solid blue;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: absolute;
+    background: white;
+    z-index: 5;
   }
   .logo-wrapper{
     width: 60%;
@@ -212,7 +221,7 @@ export default {
   .screen{
     position: absolute;
     width: 11.5%;
-    transform: translatex(-9%) translateY(-4.35vw);
+    transform: translatex(-9%) translateY(-4.43vw);
     z-index: 3;
     pointer-events: none;
   }

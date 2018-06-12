@@ -1,37 +1,43 @@
 <template>
   <div id="app">
-    <transition name="fade">
-      <router-view/>
-    </transition>
+    <main-layout>
+      <transition name="fade">
+        <router-view/>
+      </transition>
+    </main-layout>
   </div>
 </template>
 
 <script>
+import MainLayout from '@/layout/MainLayout'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    MainLayout
+  }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Dhurjati');
 *{
   box-sizing: border-box;
 }
 body{
   margin: 0;
-  border: 3px solid red;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  font-size: 15px !important
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Dhurjati', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
   height: 100%;
   width: 100%;
-  border: 3px solid yellow;
 }
 .fade-enter-active, .fade-leave-active{
   transition-property: opacity;
